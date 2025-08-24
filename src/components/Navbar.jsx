@@ -38,13 +38,13 @@ export default function Navbar() {
             onClick={close}
           >
             <li><NavLink to="/" className={({isActive}) =>
-              [styles.link, isActive ? styles.active : ""].join(" ")}>Home</NavLink></li>
+              [styles.link, isActive ? styles.active : ""].join(" ")}>Inicio</NavLink></li>
 
             <li><NavLink to="/raffles/create" className={({isActive}) =>
-              [styles.link, isActive ? styles.active : ""].join(" ")}>Create Raffle</NavLink></li>
+              [styles.link, isActive ? styles.active : ""].join(" ")}>Crear Sorteo</NavLink></li>
 
             <li><NavLink to="/raffles" className={({isActive}) =>
-              [styles.link, isActive ? styles.active : ""].join(" ")}>Raffles</NavLink></li>
+              [styles.link, isActive ? styles.active : ""].join(" ")}>Sorteos</NavLink></li>
           </ul>
         </nav>
       </div>
