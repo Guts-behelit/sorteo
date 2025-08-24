@@ -1,11 +1,19 @@
 import { useRef } from "react"
 import { useUserStore } from "../../store/userStore"
 import boletoImage from "../../../public/img/boleto.png"
+import html2canvas from "html2canvas"
+
+
+
+
+
+
 
 export default function Email() {
   const user = useUserStore((state) => state.dataUser)
   const contenidoRef = useRef(null)
 
+  // ✅ Copiar contenido como HTML o texto plano
   const copiarContenido = () => {
     const contenido = contenidoRef.current
     if (!contenido) return
@@ -30,46 +38,55 @@ export default function Email() {
     }
   }
 
+  // ✅ Screenshot de la sección del correo
+  const capturarSeccion = async () => {
+    const contenido = contenidoRef.current
+    if (!contenido) return
+
+    try {
+      const canvas = await html2canvas(contenido, { scale: 2 }) // mejor resolución
+      const imgData = canvas.toDataURL("image/png")
+
+      // Crear enlace de descarga
+      const link = document.createElement("a")
+      link.href = imgData
+      link.download = "mi_correo.png"
+      link.click()
+    } catch (error) {
+      console.error(error)
+      alert("❌ Error al capturar la imagen.")
+    }
+  }
+
   return (
     <>
     <div
       ref={contenidoRef}
       id="contenido"
-      contentEditable={false}
       style={{
         width: "100%",
-        maxWidth: "750px",
-        margin: "20px auto",
-        padding: "30px 25px",
-        backgroundColor: "#ffffff",
-        borderRadius: "20px",
-        boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.08)",
-        fontFamily: "Arial, Helvetica, sans-serif",
-        lineHeight: "1.6",
-        color: "#222",
+        maxWidth: "800px",
+        padding: "20px 10px",
+        marginTop: "20px",
+        backgroundColor: "white",
         boxSizing: "border-box",
+        borderRadius: "12px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
       }}
+      contentEditable={false}
     >
       <img
         src={boletoImage}
         alt="Ticket"
         style={{
           width: "100%",
-          borderRadius: "16px",
-          marginBottom: "20px",
+          height: "auto",
           objectFit: "cover",
+          borderRadius: "8px",
+          marginBottom: "16px",
         }}
       />
-
-      <h2
-        style={{
-          fontSize: "1.6rem",
-          fontWeight: "700",
-          color: "#111",
-          marginBottom: "15px",
-          textAlign: "center",
-        }}
-      >
+      <h2 style={{ color: "#2C3E50", marginBottom: "12px" }}>
         🎉 ¡Tu participación ha sido confirmada!
       </h2>
 
@@ -82,65 +99,68 @@ export default function Email() {
         <strong>Delícias da Rih</strong>.
       </p>
       <p>Ya estás participando oficialmente por los siguientes premios:</p>
-      <ul style={{ margin: "12px 0 18px 20px", padding: 0 }}>
+      <ul>
         <li>Una máquina de afeitar</li>
         <li>Una sandwichera</li>
         <li>Una batidora</li>
         <li>Un ventilador</li>
         <li>Una licuadora</li>
       </ul>
-
       <p>
         <strong>🎫 Tus tickets:</strong> [#12345, #12346]
       </p>
       <p>
         <strong>📅 Fecha de registro:</strong> [08/08/2025]
       </p>
-
       <p>
-        Adjunto a este correo encontrarás tu(s) ticket(s) en formato PDF o
+        Adjuntos a este correo encontrarás tu(s) ticket(s) en formato PDF o
         imagen. Guárdalos bien, ya que son tu comprobante de participación.
       </p>
-
       <p>
         📢 <strong>Recuerda:</strong> La promoción es válida durante todo el mes
         de febrero para compras mayores a R$ 10,00. El sorteo se realizará al
         finalizar la promoción y los ganadores serán anunciados en nuestras
         redes sociales.
       </p>
-
       <p>
         ¡Te deseamos mucha suerte! 🍀
         <br />
         <strong>Equipo Delícias da Rih</strong>
       </p>
     </div>
-    <div style={{ textAlign: "center", marginTop: "25px" }}>
+     {/* Botones */}
+      <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
         <button
           onClick={copiarContenido}
           style={{
-            backgroundColor: "#ff007a",
-            color: "#fff",
-            fontWeight: "bold",
-            fontSize: "1rem",
-            padding: "12px 24px",
-            borderRadius: "12px",
+            padding: "10px 16px",
+            borderRadius: "8px",
             border: "none",
+            backgroundColor: "#3498db",
+            color: "white",
+            fontWeight: "bold",
             cursor: "pointer",
-            transition: "background 0.2s ease-in-out",
           }}
-          onMouseOver={(e) =>
-            (e.currentTarget.style.backgroundColor = "#e6006f")
-          }
-          onMouseOut={(e) =>
-            (e.currentTarget.style.backgroundColor = "#ff007a")
-          }
         >
           Copiar Correo
         </button>
+
+        <button
+          onClick={capturarSeccion}
+          style={{
+            padding: "10px 16px",
+            borderRadius: "8px",
+            border: "none",
+            backgroundColor: "#27ae60",
+            color: "white",
+            fontWeight: "bold",
+            cursor: "pointer",
+          }}
+        >
+          Capturar Imagen
+        </button>
       </div>
     </>
-    
   )
 }
 
