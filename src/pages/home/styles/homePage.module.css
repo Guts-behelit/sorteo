@@ -1,0 +1,479 @@
+.container {
+  background-color: #FFD700;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.heroTitle {
+  color: #000000;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.heroButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.primaryButton {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+  min-width: 180px;
+}
+
+.primaryButton:hover {
+  transform: scale(1.05);
+}
+
+.secondaryButton {
+  background-color: #00C851;
+  color: #000000;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+  min-width: 180px;
+}
+
+.secondaryButton:hover {
+  transform: scale(1.05);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.featureCard {
+  padding: 25px;
+  border-radius: 20px;
+  text-align: left;
+  position: relative;
+  min-height: 200px;
+}
+
+.featureCardGreen {
+  background-color: #00C851;
+}
+
+.featureCardPink {
+  background-color: #E91E63;
+}
+
+.featureCardBlue {
+  background-color: #2196F3;
+}
+
+.featureIcon {
+  margin-bottom: 20px;
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.giftIcon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.giftBox {
+  width: 40px;
+  height: 30px;
+  background-color: #E91E63;
+  border: 3px solid #000;
+  border-radius: 4px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+.giftRibbon {
+  width: 8px;
+  height: 40px;
+  background-color: #FFD700;
+  border: 2px solid #000;
+  position: absolute;
+  top: 10px;
+  left: 26px;
+}
+
+.giftBow {
+  width: 20px;
+  height: 12px;
+  background-color: #FFD700;
+  border: 2px solid #000;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+}
+
+.giftBow::before,
+.giftBow::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #FFD700;
+  border: 2px solid #000;
+  border-radius: 50%;
+  top: -2px;
+}
+
+.giftBow::before {
+  left: -6px;
+}
+
+.giftBow::after {
+  right: -6px;
+}
+
+.mailIcon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mailBody {
+  width: 35px;
+  height: 25px;
+  background-color: #ffffff;
+  border: 3px solid #000;
+  border-radius: 4px;
+  position: absolute;
+  top: 20px;
+  left: 5px;
+}
+
+.mailFlap {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid #ffffff;
+  border: 3px solid #000;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.mailPerson {
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  right: 5px;
+}
+
+.securityIcon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.personCircle {
+  width: 35px;
+  height: 35px;
+  background-color: #ffffff;
+  border: 3px solid #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 12px;
+}
+
+.personBody {
+  width: 25px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: 25px;
+  left: 17px;
+}
+
+.shieldBadge {
+  width: 12px;
+  height: 12px;
+  background-color: #00C851;
+  border: 2px solid #000;
+  border-radius: 2px;
+  position: absolute;
+  top: 35px;
+  right: 8px;
+}
+
+.featureTitle {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.featureDescription {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.examples {
+  text-align: center;
+}
+
+.examplesTitle {
+  color: #000000;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.exampleCards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exampleCard {
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.exampleCardBlue {
+  background-color: #2196F3;
+}
+
+.exampleCardPink {
+  background-color: #E91E63;
+}
+
+.exampleIcon {
+  margin: 0 auto 20px;
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.phoneIcon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.phoneBody {
+  width: 30px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 3px solid #000;
+  border-radius: 8px;
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+
+.phoneButton {
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  border: 2px solid #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  left: 22px;
+}
+
+.shieldIcon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.shieldBody {
+  width: 40px;
+  height: 45px;
+  background-color: #ffffff;
+  border: 3px solid #000;
+  border-radius: 20px 20px 0 50%;
+  position: absolute;
+  top: 7px;
+  left: 10px;
+}
+
+.shieldCheck {
+  color: #00C851;
+  font-size: 20px;
+  font-weight: 900;
+  position: absolute;
+  top: 20px;
+  left: 28px;
+}
+
+.exampleTitle {
+  color: #000000;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.exampleTime {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.participateButton {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.participateButton:hover {
+  transform: scale(1.05);
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .container {
+    padding: 40px;
+  }
+  
+  .heroTitle {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+  
+  .heroButtons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .features {
+    flex-direction: row;
+    gap: 25px;
+  }
+  
+  .featureCard {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  .exampleCards {
+    flex-direction: row;
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .exampleCard {
+    flex: 1;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .container {
+    padding: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .heroTitle {
+    font-size: 64px;
+    margin-bottom: 50px;
+  }
+  
+  .heroButtons {
+    gap: 30px;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    font-size: 18px;
+    padding: 18px 35px;
+    min-width: 200px;
+  }
+  
+  .features {
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+  
+  .featureCard {
+    padding: 40px;
+  }
+  
+  .featureTitle {
+    font-size: 24px;
+  }
+  
+  .featureDescription {
+    font-size: 16px;
+  }
+  
+  .examplesTitle {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .exampleCards {
+    gap: 30px;
+  }
+  
+  .exampleCard {
+    padding: 40px;
+  }
+  
+  .exampleTitle {
+    font-size: 26px;
+  }
+  
+  .exampleTime {
+    font-size: 18px;
+  }
+  
+  .participateButton {
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+}

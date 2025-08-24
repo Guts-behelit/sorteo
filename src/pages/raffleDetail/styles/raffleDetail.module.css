@@ -1,0 +1,55 @@
+.detailContainer {
+  /* degradado tipo rifa */
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+   /* mismo estilo de sombra */
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.listTicketContainer{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.empty {
+  font-style: italic;
+  color: #333;
+}
+
+.listTicketContainer > ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(80px,100px));
+  grid-template-rows: auto;
+  gap: 10px;
+  justify-content: center;
+}
+
+.item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  box-shadow: 2px 2px 0px #000;
+  display: flex;
+  align-items: center;
+}
+
+.number {
+  font-weight: bold;
+  color: #1a73e8;
+}

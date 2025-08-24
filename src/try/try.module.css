@@ -1,0 +1,40 @@
+.tryContainer {
+  width: 300px;
+  height: 600px;
+  width: 200px;
+  height: 100px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ff0080, #7928ca, #2af598, #f6d365);
+  background-size: 400% 400%;
+  animation: gradientFlow 8s ease infinite;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.back {
+  width: 800px;
+  height: 800px;
+  border-radius: 20px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #ff0080,
+    #7928ca,
+    #2af598,
+    #f6d365,
+    #ff0080
+  );
+  background-size: 200% 200%;
+  animation: swirl 10s linear infinite;
+}
+
+@keyframes swirl {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

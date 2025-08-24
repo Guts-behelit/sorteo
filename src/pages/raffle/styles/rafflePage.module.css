@@ -1,0 +1,30 @@
+.rafflePageContainer{
+  width: 100%;
+  list-style: none;
+  margin: 0 ;
+  padding: 20px  0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+.rafflePageContainer > ul{
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.btnCreate{
+  width: 80%;
+  max-width: 500px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}

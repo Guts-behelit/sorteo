@@ -1,0 +1,232 @@
+.navbar {
+  width: 100%;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+  background: #FFD700;
+  border-bottom: 3px solid #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+  box-sizing: border-box;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  text-decoration: none;
+  color: #000000;
+  font-size: clamp(20px, 3vw, 28px);
+  transition: transform 0.2s ease;
+}
+
+.brand:hover {
+  transform: scale(1.05);
+}
+
+/* === Botón hamburguesa (visible <768px) === */
+.toggle {
+ /* inline-size: 48px;*/
+ margin: 0;
+  block-size: 48px;
+  display: grid;
+  place-items: center;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  background: #00C851;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle:hover {
+  background: #00A041;
+  transform: scale(1.05);
+}
+
+.toggle:focus-visible {
+  outline: 3px solid #E91E63;
+  outline-offset: 3px;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #000000;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.bar + .bar { 
+  margin-top: 6px; 
+}
+
+/* === Lista UL del menú – mobile-first (320px+) === */
+.menu {
+  position: fixed;
+  inset-inline: 0;
+  top: calc(64px + 3px);
+  list-style: none;
+  margin: 0;
+  padding: 20px 20px 24px;
+  display: grid;
+  gap: 12px;
+  background: #FFD700;
+  border-bottom: 3px solid #000000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.menuOpen {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.link {
+  display: block;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 3px solid #000000;
+  text-align: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 #000000;
+}
+
+.link:hover {
+  background: #00C851;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #000000;
+}
+
+.active {
+  background: #E91E63 !important;
+  color: #ffffff;
+}
+
+.active:hover {
+  background: #C2185B !important;
+}
+
+.menuMobile{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+/* === Tablet y Desktop (768px+) === */
+@media (min-width: 768px) {
+  .container {
+    min-height: 72px;
+    padding-inline: clamp(24px, 5vw, 48px);
+  }
+
+  .brand {
+    font-size: clamp(24px, 3.5vw, 32px);
+    gap: 16px;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .link {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    background: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 25px;
+    box-shadow: 0 3px 0 #000000;
+    min-width: auto;
+  }
+
+  .link:hover {
+    background: #00C851;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 0 #000000;
+  }
+
+  .active {
+    background: #E91E63 !important;
+    color: #ffffff;
+  }
+
+  .active:hover {
+    background: #C2185B !important;
+  }
+}
+
+/* === Desktop grande (1024px+) === */
+@media (min-width: 1024px) {
+  .container {
+    min-height: 80px;
+  }
+
+  .brand {
+    font-size: 36px;
+  }
+
+  .menu {
+    gap: 24px;
+  }
+
+  .link {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+}
+
+/* === Animaciones del botón hamburguesa === */
+@media (max-width: 767px) {
+  .toggle[aria-expanded="true"] .bar:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 6px);
+  }
+
+  .toggle[aria-expanded="true"] .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .toggle[aria-expanded="true"] .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -10px);
+  }
+}

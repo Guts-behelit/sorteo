@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.caption {
+  font-size: 0.9rem;
+  padding: 0.8rem;
+  background: #f9f9f9;
+  color: #333;
+  width: 100%;
+}
+
+/* 📱 Responsividad */
+@media (min-width: 768px) {
+  .card {
+    max-width: 400px;
+  }
+
+  .caption {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    max-width: 900px;
+    height: 400px;
+  }
+}

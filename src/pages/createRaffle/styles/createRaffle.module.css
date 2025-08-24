@@ -1,0 +1,220 @@
+.container {
+  background-color: #FFD700;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 4px solid #000000;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 0 #000000;
+}
+
+.title {
+  color: #000000;
+  font-size: 28px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.input {
+  padding: 15px 20px;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #000000;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 #000000;
+}
+
+.input:focus {
+  outline: none;
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #000000;
+}
+
+.input::placeholder {
+  color: #666666;
+  font-weight: 500;
+}
+
+.input:hover {
+  background-color: #f8f9fa;
+}
+
+.button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 18px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 0 #333333;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #00C851;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #00A041;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 0 #00A041;
+}
+
+.button:disabled {
+  background-color: #666666;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: 0 4px 0 #444444;
+}
+
+.loadingText {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loadingText::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos específicos para diferentes tipos de input */
+.input[type="date"] {
+  color-scheme: light;
+}
+
+.input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: #000000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.input[type="number"]::-webkit-outer-spin-button,
+.input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .container {
+    padding: 40px;
+  }
+  
+  .content {
+    padding: 40px;
+  }
+  
+  .title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .form {
+    gap: 25px;
+  }
+  
+  .input {
+    padding: 18px 24px;
+    font-size: 18px;
+  }
+  
+  .button {
+    padding: 20px 40px;
+    font-size: 20px;
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 60px;
+  }
+  
+  .content {
+    max-width: 700px;
+    padding: 50px;
+  }
+  
+  .title {
+    font-size: 42px;
+  }
+  
+  .form {
+    gap: 30px;
+  }
+}
+
+/* Estados de validación */
+.input:invalid:not(:placeholder-shown) {
+  border-color: #E91E63;
+  background-color: #ffeef2;
+}
+
+.input:valid:not(:placeholder-shown) {
+  border-color: #00C851;
+  background-color: #f0fff4;
+}
+
+/* Efectos adicionales */
+.content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 0 #000000;
+  transition: all 0.2s ease;
+}
+
+.inputGroup:focus-within .label {
+  color: #00C851;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}

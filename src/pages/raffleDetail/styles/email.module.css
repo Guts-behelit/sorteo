@@ -1,0 +1,63 @@
+.emailContainer {
+  width: 100%;
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 30px 25px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.08);
+  font-family: "Arial", "Helvetica", sans-serif;
+  line-height: 1.6;
+  color: #222;
+  box-sizing: border-box;
+}
+
+.imageTicket {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.emailContainer h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.emailContainer p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.emailContainer ul {
+  margin: 12px 0 18px 20px;
+  padding: 0;
+}
+
+.emailContainer ul li {
+  margin: 6px 0;
+}
+
+.btnContainer {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.btnContainer button {
+  background-color: #ff007a; /* fucsia como en tu botón "Comprar" */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.btnContainer button:hover {
+  background-color: #e6006f;
+}

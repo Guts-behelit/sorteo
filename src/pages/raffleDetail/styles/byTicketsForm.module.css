@@ -1,0 +1,74 @@
+.container {
+   /* estilo alegre */
+   width: 100%;
+   max-width: 600px;
+  background-color: #000;
+   border-radius: 15px;
+  padding: 1.5rem;
+  margin: 0px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.available {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.field input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0px #000;
+  font-size: 1rem;
+}
+
+.buttonBuy {
+  width: 100%;
+  background: #ff007f;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  
+  transition: transform 0.1s ease-in-out;
+}
+
+.button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.info {
+  font-style: italic;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
