@@ -1,0 +1,95 @@
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+  padding: 10px 5px;
+  border-radius: 16px;
+  background: linear-gradient(to right, #4ade80, #bbf7d0); /* verde degradado */
+  border: 2px solid black;
+  box-shadow: 2px 2px 0px black;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.form {
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+.inputSearch {
+  width: 50%;
+  margin: 0;
+  
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 2px solid black;
+  font-size: 1rem;
+}
+
+.inputSearch:focus {
+  outline: none;
+  border-color: #facc15;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.5);
+}
+
+.btnSearch {
+  padding: 0.5rem 1rem;
+  background: #facc15; /* amarillo */
+  color: black;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 8px;
+  box-shadow: 1px 1px 0px black;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btnSearch:hover {
+  background: #fde047;
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.loading {
+  color: #374151;
+}
+
+.ticketCard {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid black;
+ 
+}
+
+.ticketNumber {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.customerInfo {
+  margin-top: 0.5rem;
+  color: #1f2937;
+}
+
+.noOwner {
+  color: #6b7280;
+}

@@ -3,12 +3,6 @@ import { useUserStore } from "../../store/userStore"
 import boletoImage from "../../../public/img/boleto.png"
 import html2canvas from "html2canvas"
 
-
-
-
-
-
-
 export default function Email() {
   const user = useUserStore((state) => state.dataUser)
   const contenidoRef = useRef(null)

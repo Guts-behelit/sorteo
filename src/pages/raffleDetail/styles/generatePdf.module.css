@@ -1,0 +1,16 @@
+.generatePdfContainer{
+  width: 100%;
+  height: 200px;
+  color: white;
+  background-color: transparent;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.generatePdfContainer > button{
+  color: white;
+  background-color: rgb(219, 24, 24);
+}

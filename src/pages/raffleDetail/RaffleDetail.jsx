@@ -6,7 +6,8 @@ import BuyTicketsForm from "./ByTicketsForm"
 import styles from './styles/raffleDetail.module.css'
 import TicketItem from "./Ticket"
 import Email from "./Email"
-
+import GeneratePdf from "./GeneratePdf"
+import UserSearch from "./UserSearch"
 
 export default function RaffleDetail() {
   const { id } = useParams()
@@ -27,16 +28,17 @@ export default function RaffleDetail() {
       <div className={styles.listTicketContainer}>
         {tickets.length === 0 ? (
         <p className={styles.empty}>No hay tickets aún</p>
-      ) : (
-        <ul className={styles.list}>
+      ) : (/** */
+        <UserSearch raffleId={id}/>
+      )}{/** <ul className={styles.list}>
           {tickets.map((t) => (
           <TicketItem  key={t.id} ticket={t}/>
           ))}
-        </ul>
-      )}
+        </ul>*/}
       </div>
       <BuyTicketsForm raffleId={id} />
       <Email/>
+      <GeneratePdf codigos={tickets}/>
     </div>
   );
 }
